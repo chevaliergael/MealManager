@@ -19,7 +19,7 @@ public class Meal {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
 	
 	@Column(name = "meal_date")
 	private LocalDate mealDate;
@@ -27,14 +27,14 @@ public class Meal {
 	@Column(name = "meal_time")
 	private LocalTime mealTime;
 
-	@OneToMany(mappedBy = "meals", cascade = CascadeType.ALL)
-	private List<Aliment> alimentsList;
+//	@OneToMany(mappedBy = "meal", cascade = CascadeType.ALL)
+//	private List<Aliment> alimentsList;
 
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -53,14 +53,14 @@ public class Meal {
 	public void setMealTime(LocalTime mealTime) {
 		this.mealTime = mealTime;
 	}
-
-	public List<Aliment> getAlimentsList() {
-		return alimentsList;
-	}
-
-	public void setAlimentsList(List<Aliment> alimentsList) {
-		this.alimentsList = alimentsList;
-	}
+//
+//	public List<Aliment> getAlimentsList() {
+//		return alimentsList;
+//	}
+//
+//	public void setAlimentsList(List<Aliment> alimentsList) {
+//		this.alimentsList = alimentsList;
+//	}
 	
 	
 }

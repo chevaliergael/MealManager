@@ -21,9 +21,9 @@ public class Aliment {
 	private String name;
 	
 	
-	@ManyToOne(optional = false)
-	@JoinColumn(name = "meal_id", nullable = false, referencedColumnName = "id")
-	private Meal meal;
+//	@ManyToOne(optional = false)
+//	@JoinColumn(name = "meal_id", nullable = false, referencedColumnName = "id")
+//	private Meal meal;
 
 	public Long getId() {
 		return id;
@@ -40,13 +40,13 @@ public class Aliment {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public Meal getMeal() {
-		return meal;
-	}
-
-	public void setMeal(Meal meal) {
-		this.meal = meal;
-	}
-	
+//
+//	public Meal getMeal() {
+//		return meal;
+//	}
+//
+//	public void setMeal(Meal meal) {
+//		this.meal = meal;
+//	}
+//	
 }
