@@ -2,6 +2,7 @@ package dev.perso.mealmanager.entities;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -28,7 +30,11 @@ public class Meal {
 	private LocalTime mealTime;
 
 //	@OneToMany(mappedBy = "meal", cascade = CascadeType.ALL)
-//	private List<Aliment> alimentsList;
+//	private List<Aliment> alimentsList = new ArrayList<Aliment>();
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="meal_id")
+	private List<Aliment> alimentsList = new ArrayList<Aliment>();
 
 	public Long getId() {
 		return id;
@@ -53,14 +59,14 @@ public class Meal {
 	public void setMealTime(LocalTime mealTime) {
 		this.mealTime = mealTime;
 	}
-//
-//	public List<Aliment> getAlimentsList() {
-//		return alimentsList;
-//	}
-//
-//	public void setAlimentsList(List<Aliment> alimentsList) {
-//		this.alimentsList = alimentsList;
-//	}
+
+	public List<Aliment> getAlimentsList() {
+		return alimentsList;
+	}
+
+	public void setAlimentsList(List<Aliment> alimentsList) {
+		this.alimentsList = alimentsList;
+	}
 	
 	
 }
